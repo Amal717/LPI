@@ -17,7 +17,7 @@ all: $(TARGET)
 
 # -------------- sub makefiles --------------------
 include ./Core/makefile
-include ./lib/makefile
+include ../lib/makefile
 
 # -------------- Build the target ----------------
 $(TARGET): $(OBJS) $(LIB)	| $(BUILD_DIR)
