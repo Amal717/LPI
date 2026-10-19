@@ -2,7 +2,7 @@
 #include <fcntl.h>
 #include "tlpi_hdr.h"
 
-#ifndef BUF_SIZE        /* Allow "cc -D" to override definition */
+#ifndef BUF_SIZE        /* Allow "cc -D" to override defintion */
 #define BUF_SIZE 1024
 #endif
 
@@ -16,14 +16,15 @@ int main(int argc, char *argv[])
     if (argc != 3 || strcmp(argv[1], "--help") == 0)
         usageErr("%s old-file new-file\n", argv[0]);
 
-    /* open input and output files */
+    /* Open input and output files */
 
     inputFd = open(argv[1], O_RDONLY);
     if (inputFd == -1)
         errExit("opening file %s", argv[1]);
 
     openFlags = O_CREAT | O_WRONLY | O_TRUNC;
-    filePerms = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP |
+    filePerms = S_IRUSR | S_IWUSR  | 
+                S_IRGRP | S_IWGRP |
                 S_IROTH | S_IWOTH;  /* rw-rw-rw */
     outputFd = open(argv[2], openFlags, filePerms);
     if (outputFd == -1)
