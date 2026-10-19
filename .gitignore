@@ -1,0 +1,10 @@
+# Build directories anywhere in the repository
+**/build/
+
+# clangd cache directories anywhere in the repository
+**/.cache/
+
+# compile commands
+compile_commands.json
+
+
