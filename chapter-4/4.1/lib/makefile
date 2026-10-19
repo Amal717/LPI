@@ -19,6 +19,8 @@ CFLAGS += $(addprefix -I,$(LIB_INC))
 
 LIB_OBJS = $(patsubst %.c,$(LIB_DIR)/%.o,$(LIB_SRC))
 
+lib: $(LIB)
+
 $(LIB): $(LIB_OBJS)
 	mkdir -p $(LIB_DIR)
 	ar -r $@ $^
@@ -32,4 +34,3 @@ $(LIB_DIR):
 libclean:
 	rm -rf $(LIB_DIR)
 
-.phony: libclean
