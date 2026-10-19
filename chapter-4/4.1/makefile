@@ -1,5 +1,5 @@
 # -------------- PROJECT_NAME ---------------------
-PROJECT_NAME = 4.1-fileio-copy
+PROJECT_NAME = copy
 
 # -------------- Build variables ------------------
 BUILD_DIR = build
@@ -31,4 +31,7 @@ $(BUILD_DIR):
 	mkdir $@
 
 clean:
-	rm -rf $(BUILD_DIR)
+	rm -rf $(TARGET)
+	rm -rf $(OBJS)
+
+.phony: clean libclean
